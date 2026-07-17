@@ -187,6 +187,12 @@ During development I tested several Docker features to understand how they affec
 - On macOS I used `host.docker.internal` so the frontend container could reach the backend running on the host.
 - For Linux compatibility I documented using a user-defined Docker network and container names instead, since `host.docker.internal` may not always be available.
 
+### What Didn't Work
+
+- Running the backend without a bind mount or named volume caused all review data to be lost whenever the container was removed. This demonstrated why Docker volumes are necessary for persistent storage.
+
+- While testing on macOS, `host.docker.internal` worked for communication between containers and the host. However, this approach is not portable to every Linux environment, so I also documented a Docker network based approach for Linux compatibility.
+- 
 ## Design
 
 This application uses a **cyberpunk neo-brutalist aesthetic**:
@@ -198,4 +204,4 @@ This application uses a **cyberpunk neo-brutalist aesthetic**:
 
 ## License
 
-MIT
+None
