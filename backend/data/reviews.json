@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "0cbfb1f7-47de-468f-ad17-48e9e92bd831",
+    "weekNumber": 4,
+    "reviewerName": "jessica",
+    "rating": 5,
+    "reviewText": "amazinggggly nice",
+    "createdAt": "2026-07-17T17:10:43.664Z"
+  },
+  {
+    "id": "1d7d2a53-b837-43f7-a36c-3fb9d6cc88b6",
+    "weekNumber": 2,
+    "reviewerName": "cressd",
+    "rating": 3,
+    "reviewText": "really coolll",
+    "createdAt": "2026-07-17T17:09:53.897Z"
+  }
+]

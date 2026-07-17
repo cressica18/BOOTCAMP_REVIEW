@@ -1,0 +1,52 @@
+/* WEEK FILTER - CYBERPUNK CONTROL */
+.week-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.filter-label {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.8rem;
+  color: #00ff88;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.select {
+  padding: 10px 16px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  background: #1a1a1a;
+  border: 2px solid #ff006e;
+  color: #00ff88;
+  cursor: pointer;
+  min-width: 150px;
+}
+
+.select:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
+}
+
+.select option {
+  background: #1a1a1a;
+  color: #00ff88;
+}
+
+.clear-filter {
+  background: transparent;
+  border: none;
+  color: #ff006e;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0 8px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.clear-filter:hover {
+  color: #ff1a8c;
+  transform: scale(1.2);
+}

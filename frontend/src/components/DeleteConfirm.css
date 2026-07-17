@@ -1,0 +1,67 @@
+/* DELETE CONFIRM MODAL - CYBERPUNK OVERLAY */
+.delete-confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.delete-confirm-modal {
+  background: #111;
+  border: 2px solid #ff006e;
+  box-shadow: 0 0 40px rgba(255, 0, 110, 0.5);
+  padding: 30px;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.warning-icon {
+  font-size: 2rem;
+  color: #ff006e;
+}
+
+.modal-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.3rem;
+  color: #ff006e;
+  letter-spacing: 2px;
+}
+
+.modal-text {
+  color: #ccc;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.modal-text strong {
+  color: #00ff88;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}

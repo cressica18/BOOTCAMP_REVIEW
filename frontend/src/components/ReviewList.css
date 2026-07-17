@@ -1,0 +1,43 @@
+/* REVIEW LIST LAYOUT */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  border: 2px dashed #00ff88;
+  background: #111;
+  min-height: 200px;
+}
+
+.empty-icon {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  color: #ff006e;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: 2px solid #ff006e;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+.empty-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  color: #00ff88;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.empty-text {
+  color: #888;
+  font-size: 0.9rem;
+}

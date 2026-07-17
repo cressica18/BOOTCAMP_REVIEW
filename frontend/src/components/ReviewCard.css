@@ -1,0 +1,76 @@
+/* REVIEW CARD - NEO-BRUTALIST DESIGN */
+.review-card {
+  background: #111;
+  border: 2px solid #00ff88;
+  box-shadow: 8px 8px 0 #ff006e;
+  padding: 20px;
+  transition: all 0.2s ease;
+  animation: fadeInUp 0.3s ease-out;
+  animation-fill-mode: both;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-card:hover {
+  box-shadow: 12px 12px 0 #ff006e;
+  transform: translateX(-4px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.week-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #ff006e;
+  letter-spacing: 2px;
+  padding: 4px 10px;
+  border: 1px solid #ff006e;
+  background: transparent;
+}
+
+.card-date {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reviewer-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  color: #00ff88;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.review-text {
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,38 @@
+/* ERROR MESSAGE - PROMINENT ERROR DISPLAY */
+.error-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1a0000;
+  border: 2px solid #ff006e;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(255, 0, 110, 0.3);
+}
+
+.error-icon {
+  font-size: 1.2rem;
+  color: #ff006e;
+}
+
+.error-text {
+  color: #ff6b9d;
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.error-close {
+  background: transparent;
+  border: none;
+  color: #ff006e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 8px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.error-close:hover {
+  color: #ff1a8c;
+  transform: scale(1.2);
+}
