@@ -192,7 +192,7 @@ During development I tested several Docker features to understand how they affec
 - Running the backend without a bind mount or named volume caused all review data to be lost whenever the container was removed. This demonstrated why Docker volumes are necessary for persistent storage.
 
 - While testing on macOS, `host.docker.internal` worked for communication between containers and the host. However, this approach is not portable to every Linux environment, so I also documented a Docker network based approach for Linux compatibility.
-- 
+
 ## Design
 
 This application uses a **cyberpunk neo-brutalist aesthetic**:
