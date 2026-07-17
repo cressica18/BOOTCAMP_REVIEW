@@ -1,0 +1,35 @@
+{
+  "name": "bootcamp-review-api",
+  "version": "1.0.0",
+  "description": "Bootcamp Review API - A simple REST API for bootcamp reviews",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch"
+  },
+  "keywords": [
+    "bootcamp",
+    "review",
+    "api",
+    "express"
+  ],
+  "author": "Bootcamp Review Team",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
