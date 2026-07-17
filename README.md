@@ -164,6 +164,28 @@ Use a bind mount during development for easy data inspection:
 ```bash
 docker run -d -p 5000:5000 -v $(pwd)/data:/app/data bootcamp-review-api
 ```
+## Docker Experiment Notes
+
+During development I tested several Docker features to understand how they affect the application.
+
+### Bind Mounts
+- I used a bind mount to map the backend `data` directory from the host machine into the container.
+- This allowed changes made inside the container to immediately appear on the host.
+- It worked well for development because I could inspect `reviews.json` directly.
+
+### Named Volumes
+- I also tested Docker named volumes for storing review data.
+- The review data remained available even after stopping and recreating containers.
+- This is a cleaner approach for persistent application data because Docker manages the storage.
+
+### Environment Variables
+- I used `.env.example` files for both frontend and backend.
+- The frontend Docker image was built using `VITE_API_URL` so it could communicate with the backend service.
+- During local development I also tested changing the backend port using environment variables.
+
+### Docker Networking
+- On macOS I used `host.docker.internal` so the frontend container could reach the backend running on the host.
+- For Linux compatibility I documented using a user-defined Docker network and container names instead, since `host.docker.internal` may not always be available.
 
 ## Design
 
