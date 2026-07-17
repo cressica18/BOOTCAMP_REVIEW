@@ -51,49 +51,15 @@ async function writeReviews(reviews) {
 }
 
 /**
- * Validate review data
- */
-function validateReview(data) {
-  const errors = [];
-
-  if (!data.weekNumber || !Number.isInteger(Number(data.weekNumber)) || Number(data.weekNumber) < 1) {
-    errors.push({ field: 'weekNumber', message: 'Week number is required and must be a positive integer' });
-  }
-
-  if (!data.reviewerName || typeof data.reviewerName !== 'string') {
-    errors.push({ field: 'reviewerName', message: 'Reviewer name is required' });
-  }
-
-  const rating = Number(data.rating);
-  if (!data.rating || !Number.isInteger(rating) || rating < 1 || rating > 5) {
-    errors.push({ field: 'rating', message: 'Rating is required and must be an integer between 1 and 5' });
-  }
-
-  if (!data.reviewText || typeof data.reviewText !== 'string' || data.reviewText.trim().length === 0) {
-    errors.push({ field: 'reviewText', message: 'Review text is required' });
-  }
-
-  if (data.reviewText && data.reviewText.length > 5000) {
-    errors.push({ field: 'reviewText', message: 'Review text must be 5000 characters or less' });
-  }
-
-  if (errors.length > 0) {
-    throw new ValidationError('Validation failed', errors);
-  }
-}
-
-/**
  * Create a new review
  */
 export async function createReview(data) {
-  validateReview(data);
-
   const reviews = await readReviews();
 
   const newReview = {
     id: uuidv4(),
     weekNumber: Number(data.weekNumber),
-    reviewerName: data.reviewerName.trim(),
+    reviewerName: data.reviewerName?.trim() || 'Anonymous',
     rating: Number(data.rating),
     reviewText: data.reviewText.trim(),
     createdAt: new Date().toISOString()

@@ -7,7 +7,7 @@ const router = express.Router();
 
 // GET /api/reviews - List all reviews with optional week filtering
 router.get('/', validate(validationSchemas.listReviews), asyncHandler(async (req, res) => {
-  const reviews = reviewStore.findAll(req.validated.query);
+  const reviews = await reviewStore.findAll(req.validated.query);
   res.json({
     success: true,
     data: reviews
@@ -16,25 +16,16 @@ router.get('/', validate(validationSchemas.listReviews), asyncHandler(async (req
 
 // GET /api/reviews/stats - Get review statistics
 router.get('/stats', asyncHandler(async (_req, res) => {
-  const stats = reviewStore.getStats();
+  const stats = await reviewStore.getStats();
   res.json({
     success: true,
     data: stats
   });
 }));
 
-// GET /api/reviews/bootcamps - Get unique bootcamp names
-router.get('/bootcamps', asyncHandler(async (_req, res) => {
-  const bootcamps = reviewStore.getBootcampNames();
-  res.json({
-    success: true,
-    data: bootcamps
-  });
-}));
-
 // GET /api/reviews/weeks - Get unique week numbers
 router.get('/weeks', asyncHandler(async (_req, res) => {
-  const weeks = reviewStore.getWeekNumbers();
+  const weeks = await reviewStore.getWeekNumbers();
   res.json({
     success: true,
     data: weeks
@@ -43,7 +34,7 @@ router.get('/weeks', asyncHandler(async (_req, res) => {
 
 // GET /api/reviews/:id - Get single review by ID
 router.get('/:id', validate(validationSchemas.getReview), asyncHandler(async (req, res) => {
-  const review = reviewStore.findById(req.validated.params.id);
+  const review = await reviewStore.findById(req.validated.params.id);
   if (!review) {
     throw new NotFoundError('Review not found');
   }
@@ -55,7 +46,7 @@ router.get('/:id', validate(validationSchemas.getReview), asyncHandler(async (re
 
 // POST /api/reviews - Create new review
 router.post('/', validate(validationSchemas.createReview), asyncHandler(async (req, res) => {
-  const review = reviewStore.create(req.validated.body);
+  const review = await reviewStore.create(req.validated.body);
   res.status(201).json({
     success: true,
     data: review,
@@ -65,7 +56,7 @@ router.post('/', validate(validationSchemas.createReview), asyncHandler(async (r
 
 // DELETE /api/reviews/:id - Delete review by ID
 router.delete('/:id', validate(validationSchemas.deleteReview), asyncHandler(async (req, res) => {
-  const deleted = reviewStore.deleteById(req.validated.params.id);
+  const deleted = await reviewStore.deleteById(req.validated.params.id);
   if (!deleted) {
     throw new NotFoundError('Review not found');
   }
